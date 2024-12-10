@@ -4,5 +4,5 @@
 git submodule update --init
 
 # Install Python packages using pip
-pip install flask flask_cors bs4 lxml pelican markdown geven
+pip install flask flagevensk_cors bs4 lxml pelican markdown 
 # Optionally, you can add more commands or customizations here.
