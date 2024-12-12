@@ -137,14 +137,14 @@
 <p></p>
 <p><img alt="" height="237" src="/images/螢幕擷取畫面 2024-12-05 150202.png" width="295"/></p>
 <p></p>
-<p>第二題:<a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/7e333e32e69fb950828bb8df17cf8f15/raw/5f5f0ff84b63c3b25073c4d88157d36f012c38cc/1.py">解</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://shiny-xylophone-7vpvr4wv9?src=https://gist.githubusercontent.com/41323114/5e497fefa3f6007586c7e2b45919fb65/raw/4e3017033b58c74e8d5b0523153174d2fe8bfe9f/w13hw.py"><!-- 導入 brython 程式庫 --></a></p>
-<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://shiny-xylophone-7vpvr4wv9?src=https://gist.githubusercontent.com/41323114/5e497fefa3f6007586c7e2b45919fb65/raw/4e3017033b58c74e8d5b0523153174d2fe8bfe9f/w13hw.py">
+<p>第二題:<a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/8944a11f157420ea3bc5ee85e3627da3/raw/35f162422e0fa7e26bf9de73e62efb61eec247a4/hw13.py">解</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/7e333e32e69fb950828bb8df17cf8f15/raw/5f5f0ff84b63c3b25073c4d88157d36f012c38cc/1.py?src=https://gist.githubusercontent.com/41323114/8944a11f157420ea3bc5ee85e3627da3/raw/35f162422e0fa7e26bf9de73e62efb61eec247a4/hw13.py"><!-- 導入 brython 程式庫 --></a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/7e333e32e69fb950828bb8df17cf8f15/raw/5f5f0ff84b63c3b25073c4d88157d36f012c38cc/1.py?src=https://gist.githubusercontent.com/41323114/8944a11f157420ea3bc5ee85e3627da3/raw/35f162422e0fa7e26bf9de73e62efb61eec247a4/hw13.py">
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 </a></p>
-<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://shiny-xylophone-7vpvr4wv9?src=https://gist.githubusercontent.com/41323114/5e497fefa3f6007586c7e2b45919fb65/raw/4e3017033b58c74e8d5b0523153174d2fe8bfe9f/w13hw.py"><!-- 啟動 Brython --></a></p>
-<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://shiny-xylophone-7vpvr4wv9?src=https://gist.githubusercontent.com/41323114/5e497fefa3f6007586c7e2b45919fb65/raw/4e3017033b58c74e8d5b0523153174d2fe8bfe9f/w13hw.py">
+<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/7e333e32e69fb950828bb8df17cf8f15/raw/5f5f0ff84b63c3b25073c4d88157d36f012c38cc/1.py?src=https://gist.githubusercontent.com/41323114/8944a11f157420ea3bc5ee85e3627da3/raw/35f162422e0fa7e26bf9de73e62efb61eec247a4/hw13.py"><!-- 啟動 Brython --></a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/7e333e32e69fb950828bb8df17cf8f15/raw/5f5f0ff84b63c3b25073c4d88157d36f012c38cc/1.py?src=https://gist.githubusercontent.com/41323114/8944a11f157420ea3bc5ee85e3627da3/raw/35f162422e0fa7e26bf9de73e62efb61eec247a4/hw13.py">
 <script>
 window.onload=function(){
 brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
@@ -165,117 +165,119 @@ brython_div <= canvas
 ctx = canvas.getContext("2d")
 ctx.lineWidth = 4
  
-#混色的
-ctx.globalCompositeOperation = "screem"
+# 混色模式設定為 "screen"
+ctx.globalCompositeOperation = "screen"
  
- 
-#黑邊圓*2(每個畫四個邊邊)
+# 黑邊圓*2(每個畫四個弧段)
 ctx.strokeStyle = 'black'
-#第一個圓
+
+# 第一個圓
 ctx.beginPath()
-ctx.arc(160, 160, 141, 0.25 * math.pi,0.75 * math.pi)
-ctx.fillStyle = "Turquoise"
+ctx.arc(160, 160, 141, 0.25 * math.pi, 0.75 * math.pi)
+ctx.fillStyle = "LightCoral"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(160, 160, 141, 0.75 * math.pi,1.25 * math.pi)
-ctx.fillStyle = "Tomato"
+ctx.arc(160, 160, 141, 0.75 * math.pi, 1.25 * math.pi)
+ctx.fillStyle = "DarkOrange"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(160, 160, 141, 1.25 * math.pi,1.75 * math.pi)
-ctx.fillStyle = "SpringGreen"
+ctx.arc(160, 160, 141, 1.25 * math.pi, 1.75 * math.pi)
+ctx.fillStyle = "LimeGreen"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(160, 160, 141, 1.75 * math.pi,0.25 * math.pi)
-ctx.fillStyle = "FloralWhite"
+ctx.arc(160, 160, 141, 1.75 * math.pi, 0.25 * math.pi)
+ctx.fillStyle = "LavenderBlush"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
-#第二個圓
+
+# 第二個圓
 ctx.beginPath()
-ctx.arc(260, 260, 141, 1.25 * math.pi,1.75 * math.pi)
-ctx.fillStyle = "Purple"
+ctx.arc(260, 260, 141, 1.25 * math.pi, 1.75 * math.pi)
+ctx.fillStyle = "Indigo"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(260, 260, 141, 1.75 * math.pi,0.25 * math.pi)
-ctx.fillStyle = "OliveDrab"
+ctx.arc(260, 260, 141, 1.75 * math.pi, 0.25 * math.pi)
+ctx.fillStyle = "SeaGreen"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(260, 260, 141, 0.25 * math.pi,0.75 * math.pi)
-ctx.fillStyle = "Orange"
+ctx.arc(260, 260, 141, 0.25 * math.pi, 0.75 * math.pi)
+ctx.fillStyle = "Goldenrod"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.arc(260, 260, 141, 0.75 * math.pi,1.25 * math.pi)
-ctx.fillStyle = "MediumVioletRed"
+ctx.arc(260, 260, 141, 0.75 * math.pi, 1.25 * math.pi)
+ctx.fillStyle = "MediumOrchid"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
- 
-#紅方形*2(4個三角形)
+
+# 紅色三角形*2
 ctx.strokeStyle = 'red'
+
+# 第一個三角形區域
 ctx.beginPath()
-ctx.moveTo(60,60)
-ctx.lineTo(60,260)
-ctx.lineTo(260,260)
-ctx.fillStyle = "Gold"
+ctx.moveTo(60, 60)
+ctx.lineTo(60, 260)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "Goldenrod"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
+# 第二個三角形區域
 ctx.beginPath()
-ctx.moveTo(60,60)
-ctx.lineTo(260,60)
-ctx.lineTo(260,260)
-ctx.fillStyle = "Indigo"
+ctx.moveTo(60, 60)
+ctx.lineTo(260, 60)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "MediumSlateBlue"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
+# 第三個三角形區域
 ctx.beginPath()
-ctx.moveTo(160,160)
-ctx.lineTo(360,160)
-ctx.lineTo(360,360)
-ctx.fillStyle = "Cyan"
+ctx.moveTo(160, 160)
+ctx.lineTo(360, 160)
+ctx.lineTo(360, 360)
+ctx.fillStyle = "LightCyan"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
+# 第四個三角形區域
 ctx.beginPath()
-ctx.moveTo(160,160)
-ctx.lineTo(160,360)
-ctx.lineTo(360,360)
-ctx.fillStyle = "SpringGreen"
+ctx.moveTo(160, 160)
+ctx.lineTo(160, 360)
+ctx.lineTo(360, 360)
+ctx.fillStyle = "MediumSpringGreen"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
-  
-#重疊的小方型
+
+# 重疊的小矩形
 ctx.beginPath()
-ctx.moveTo(160,160)
-ctx.lineTo(160,260)
-ctx.lineTo(260,260)
-ctx.fillStyle = "Turquoise"
+ctx.moveTo(160, 160)
+ctx.lineTo(160, 260)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "MediumTurquoise"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
+
 ctx.beginPath()
-ctx.moveTo(160,160)
-ctx.lineTo(260,160)
-ctx.lineTo(260,260)
-ctx.fillStyle = "SlateBlue"
+ctx.moveTo(160, 160)
+ctx.lineTo(260, 160)
+ctx.lineTo(260, 260)
+ctx.fillStyle = "RoyalBlue"  # 修改顏色
 ctx.fill()
 ctx.stroke()
- 
- 
-#籃斜線
+
+# 藍色斜線
 ctx.strokeStyle = 'blue'
 ctx.beginPath() 
 ctx.moveTo(60, 60)
