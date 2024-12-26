@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,7 +141,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='w16_exam1.html'>Next</a> >> w16_exam1<br /><h1>w15</h1>
+    <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
 <p>第一題</p>
 <p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/402da27b28683b850e38334698c37bcc/raw/b2604b8d0d7231cea9e61727557ecf32445c2db6/w15.py">從 1 累加到 100</a></p>
 <p>第二題</p>
@@ -153,8 +153,193 @@ img.add_border {
 <p>心得</p>
 <p>這次熟悉了對於brython的應用,到知道if i % 2 == 0這段意思是如I得數字除2=0為偶數的程式碼怎麼寫</p>
 <p>也知道<span class="hljs-string">'8'</span><span> </span><span class="hljs-keyword">not</span><span> </span><span class="hljs-keyword">in</span><span> </span><span class="hljs-built_in">str</span>(i)這段為8不能成為字串的程式碼,這次的功課讓我熟悉了brython的應用</p>
-<span></span>
-<br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='w16_exam1.html'>Next</a> >> w16_exam1</div>
+<p><span></span></p>
+<p>
+<script type="text/python3">
+from browser import document, html
+
+import math
+
+ 
+
+# 初始化 HTML，確保 canvas 元素存在
+
+def setup_canvas():
+
+    if not document.querySelector("#my_canvas"):
+
+        canvas = html.CANVAS(id="my_canvas", width=800, height=600)
+
+        document <= canvas
+
+ 
+
+setup_canvas()
+
+
+
+# Set up canvas
+
+canvas = document["my_canvas"]
+
+ctx = canvas.getContext("2d")
+
+
+origin_x, origin_y = 31, 14    #自己學號 修改
+
+
+
+# Draw X-axis
+
+ctx.beginPath()
+
+ctx.moveTo(origin_x, origin_y)
+
+ctx.lineTo(500, origin_y)
+
+ctx.strokeStyle = "black"
+
+ctx.lineWidth = 2
+
+ctx.stroke()
+
+
+
+# Draw Y-axis
+
+ctx.beginPath()
+
+ctx.moveTo(origin_x, origin_y)
+
+ctx.lineTo(origin_x, 300)
+
+ctx.stroke()
+
+
+
+# Label origin
+
+ctx.font = "12px Arial"
+
+ctx.fillStyle = "black"
+
+ctx.fillText("(31, 14)", origin_x + 5, origin_y - 5)
+
+
+
+# Draw shapes
+
+# Adjusted placement to fix alignment issue
+
+
+
+# Hexagon (Orange)
+
+hex_x, hex_y = 100, 100
+
+ctx.beginPath()
+
+for i in range(6):
+
+    angle = i * (2 * math.pi / 6)
+
+    x = hex_x + 30 * math.cos(angle)
+
+    y = hex_y + 30 * math.sin(angle)
+
+    if i == 0:
+
+        ctx.moveTo(x, y)
+
+    else:
+
+        ctx.lineTo(x, y)
+
+ctx.closePath()
+
+ctx.fillStyle = "orange"
+
+ctx.fill()
+
+
+
+# Diamond (Teal)
+
+ctx.beginPath()
+
+ctx.moveTo(160, 70)
+
+ctx.lineTo(180, 100)
+
+ctx.lineTo(160, 130)
+
+ctx.lineTo(140, 100)
+
+ctx.closePath()
+
+ctx.fillStyle = "teal"
+
+ctx.fill()
+
+
+
+# Triangle (Teal)
+
+ctx.beginPath()
+
+ctx.moveTo(165, 130)
+
+ctx.lineTo(205, 130)
+
+ctx.lineTo(185, 100)
+
+ctx.closePath()
+
+ctx.fillStyle = "blue"
+
+ctx.fill()
+
+
+
+# Circle (Pink)
+
+ctx.beginPath()
+
+ctx.arc(230, 100, 30, 0, 2 * math.pi)
+
+ctx.fillStyle = "pink"
+
+ctx.fill()
+
+
+
+# Square (Yellow)
+
+ctx.beginPath()
+
+ctx.rect(265, 75, 50, 50)
+
+ctx.fillStyle = "yellow"
+
+ctx.fill()
+
+
+
+# Rectangle (Blue)
+
+ctx.beginPath()
+
+ctx.rect(320, 90, 60, 20)
+
+ctx.fillStyle = "Blue"
+
+ctx.fill()
+</script>
+</p>
+<p><span></span></p>
+<p></p>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/zxQPFOaoU7U" width="560"></iframe><img alt="" src="https://youtu.be/zxQPFOaoU7U?si=6AyBtgIxJaSG6LDU"/></span></p>
+<br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
