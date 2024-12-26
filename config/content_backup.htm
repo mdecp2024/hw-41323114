@@ -675,15 +675,295 @@ ctx.fill()
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam1</h3>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import document, html
+
+import math
+
+ 
+
+# 初始化 HTML，確保 canvas 元素存在
+
+def setup_canvas():
+
+    if not document.querySelector("#my_canvas"):
+
+        canvas = html.CANVAS(id="my_canvas", width=800, height=600)
+
+        document <= canvas
+
+ 
+
+setup_canvas()
+
+
+
+# Set up canvas
+
+canvas = document["my_canvas"]
+
+ctx = canvas.getContext("2d")
+
+
+origin_x, origin_y = 31, 14    #自己學號 修改
+
+
+
+# Draw X-axis
+
+ctx.beginPath()
+
+ctx.moveTo(origin_x, origin_y)
+
+ctx.lineTo(500, origin_y)
+
+ctx.strokeStyle = "black"
+
+ctx.lineWidth = 2
+
+ctx.stroke()
+
+
+
+# Draw Y-axis
+
+ctx.beginPath()
+
+ctx.moveTo(origin_x, origin_y)
+
+ctx.lineTo(origin_x, 300)
+
+ctx.stroke()
+
+
+
+# Label origin
+
+ctx.font = "12px Arial"
+
+ctx.fillStyle = "black"
+
+ctx.fillText("(31, 14)", origin_x + 5, origin_y - 5)
+
+
+
+# Draw shapes
+
+# Adjusted placement to fix alignment issue
+
+
+
+# Hexagon (Orange)
+
+hex_x, hex_y = 100, 100
+
+ctx.beginPath()
+
+for i in range(6):
+
+    angle = i * (2 * math.pi / 6)
+
+    x = hex_x + 30 * math.cos(angle)
+
+    y = hex_y + 30 * math.sin(angle)
+
+    if i == 0:
+
+        ctx.moveTo(x, y)
+
+    else:
+
+        ctx.lineTo(x, y)
+
+ctx.closePath()
+
+ctx.fillStyle = "orange"
+
+ctx.fill()
+
+
+
+# Diamond (Teal)
+
+ctx.beginPath()
+
+ctx.moveTo(160, 70)
+
+ctx.lineTo(180, 100)
+
+ctx.lineTo(160, 130)
+
+ctx.lineTo(140, 100)
+
+ctx.closePath()
+
+ctx.fillStyle = "teal"
+
+ctx.fill()
+
+
+
+# Triangle (Teal)
+
+ctx.beginPath()
+
+ctx.moveTo(165, 130)
+
+ctx.lineTo(205, 130)
+
+ctx.lineTo(185, 100)
+
+ctx.closePath()
+
+ctx.fillStyle = "blue"
+
+ctx.fill()
+
+
+
+# Circle (Pink)
+
+ctx.beginPath()
+
+ctx.arc(230, 100, 30, 0, 2 * math.pi)
+
+ctx.fillStyle = "pink"
+
+ctx.fill()
+
+
+
+# Square (Yellow)
+
+ctx.beginPath()
+
+ctx.rect(265, 75, 50, 50)
+
+ctx.fillStyle = "yellow"
+
+ctx.fill()
+
+
+
+# Rectangle (Blue)
+
+ctx.beginPath()
+
+ctx.rect(320, 90, 60, 20)
+
+ctx.fillStyle = "Blue"
+
+ctx.fill()
+</script>
+</p>
 <p></p>
 <p><a href="https://mdecp2024.github.io/hw-41323114/content/Brython.html?src=https://gist.githubusercontent.com/41323114/ed6de1ab47eb6bc5d1351aa3e1d46748/raw/1ca77e1c543e4d6738439ffb6729a25464b878d8/w16_exam1.py">解</a></p>
 <p><a href="https://gist.githubusercontent.com/41323114/ed6de1ab47eb6bc5d1351aa3e1d46748/raw/1ca77e1c543e4d6738439ffb6729a25464b878d8/w16_exam1.py">程式碼</a></p>
 <p></p>
 <p><span>剛開始我在思考形狀大小最後得出 六邊形：座標100, 100 半徑為 30 顏色為橙色 菱形：頂點分別在160, 70, (180, 100), (160, 130), (140, 100) 顏色為青色 三角形：頂點在 (165, 130), (205, 130), (185, 100) 顏色為藍色 圓形：圓心在 (230, 100)，半徑為 30，顏色為粉紅色。 正方形：左上角在 (265, 75)，邊長為 50，顏色為黃色。 長方形：左上角在 (320, 90)，寬 60，高 20，顏色為藍色。 後來我發現Canvas 元素來進行圖形繪製非常靈活和多樣 也可以透過 beginPath(), moveTo(), lineTo() 等方法，可以精確控制每個圖形的行程 也可以設定原點基準點在特定位置上</span></p>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/zxQPFOaoU7U" width="560"></iframe></span></p>
 <p></p>
 <p></p>
 <div id="brython_div1"></div>
-<h1>HW 3</h1>
+<h3>w16_exam2</h3>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+# 建立畫布
+canvas = html.CANVAS(width=600, height=600)  # 畫布大小增加兩倍
+brython_div = doc["brython_div1"]  # 將畫布放置於網頁中的指定 div
+brython_div <= canvas
+
+# 取得 canvas 的 2D 繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 每一格的像素大小
+pixel_scale = 100  # 每格的像素比例增加兩倍 (原為20，放大到40)
+
+# 定義原點 (31, 14) 作為起始點偏移
+offset_x = 32 * 2  # 放大兩倍
+offset_y = 10 * 2  # 放大兩倍
+
+# 定義迷宮線條
+lines = [
+    ((0, 0), (5, 0)),
+    ((5, 0), (5, 5)),
+    ((3, 5), (5, 5)),
+    ((5, 5), (4, 5)),
+    ((4, 3), (4, 4)),
+    ((4, 3), (1, 3)),
+    ((1, 3), (1, 4)),
+    ((3, 4), (3, 2)),
+    ((4, 2), (5, 2)),
+    # 第二條線
+    ((0, 0), (0, 1)),
+    ((0, 2), (0, 5)),
+    ((0, 5), (2, 5)),
+    ((2, 5), (2, 4)),
+    ((2, 4), (3, 4)),
+    ((0, 2), (2, 2)),
+    ((2, 2), (2, 1)),
+    ((1, 1), (3, 1)),
+    ((4, 1), (4, 2)),
+]
+
+# 繪製迷宮線條
+ctx.strokeStyle = "blue"  # 設定線條顏色
+ctx.lineWidth = 4  # 設定線條寬度
+
+for line in lines:
+    start = line[0]
+    end = line[1]
+    ctx.beginPath()
+    ctx.moveTo(
+        offset_x + start[0] * pixel_scale,
+        offset_y + start[1] * pixel_scale
+    )
+    ctx.lineTo(
+        offset_x + end[0] * pixel_scale,
+        offset_y + end[1] * pixel_scale
+    )
+    ctx.stroke()
+
+
+
+# 將座標標示移動到紅點附近的適當位置
+ctx.font = "18px Arial"  # 放大字體大小 (原為14px)
+ctx.fillStyle = "red"
+ctx.fillText("(31, 14)", offset_x + 10, offset_y + 20)  # 在紅點的左下方標出座標
+</script>
+</p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
